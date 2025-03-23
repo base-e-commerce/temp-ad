@@ -16,7 +16,7 @@
     "dark mode",
     "open source"
   ],
-  "author": "Luciano Oliveira <me@lanno.dev>",
+  "author": "",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
