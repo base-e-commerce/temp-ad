@@ -1,23 +1,9 @@
 {
   "name": "angular-tailwind",
-  "displayName": "Angular Tailwind",
+  "displayName": "Administrator Dashboard",
   "version": "0.8.0",
   "description": "Angular & Tailwind CSS Admin Dashboard Starter Kit, Free and Open Source",
-  "homepage": "https://github.com/lannodev/angular-tailwind#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lannodev/angular-tailwind.git"
-  },
-  "keywords": [
-    "angular",
-    "tailwind",
-    "starter-kit",
-    "tailwind-template",
-    "dark mode",
-    "open source"
-  ],
   "author": "",
-  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
