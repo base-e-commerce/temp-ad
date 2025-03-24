@@ -4,12 +4,13 @@ import { RouterLink } from '@angular/router';
 import { HeaderInfo } from 'src/app/core/interface/header-global';
 import { BilanTextComponent } from 'src/app/shared/components/bilan-text/bilan-text.component';
 import { GlobalHeaderComponent } from 'src/app/shared/components/global-header/global-header.component';
+import { LoadingComponent } from 'src/app/shared/components/loading/loading.component';
 import { TableContentComponent } from 'src/app/shared/components/table-content/table-content.component';
 
 @Component({
   selector: 'app-page-home',
   standalone: true,
-  imports: [CommonModule, GlobalHeaderComponent, RouterLink, BilanTextComponent, TableContentComponent],
+  imports: [CommonModule, GlobalHeaderComponent, RouterLink, BilanTextComponent, LoadingComponent],
   templateUrl: './page-home.component.html',
   styleUrl: './page-home.component.scss',
 })
