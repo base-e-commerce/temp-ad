@@ -1,5 +1,4 @@
 <div class="relative ml-3">
-  <!-- Profile Button -->
   <button (click)="toggleMenu()" class="relative flex rounded-full bg-card text-sm" type="button">
     <span class="sr-only">Open user menu</span>
     <img
@@ -9,7 +8,6 @@
       src="https://avatars.githubusercontent.com/u/12519008?v=4"
       alt="" />
   </button>
-  <!-- Dropdown -->
   <div
     [@openClose]="isOpen ? 'open' : 'closed'"
     class="absolute right-0 z-20 mt-2 w-60 origin-top-right transform rounded-md bg-background py-4 shadow-custom ring-1 ring-transparent ring-opacity-5 transition focus:outline-none">
@@ -18,23 +16,38 @@
         <img class="rounded-md" src="https://avatars.githubusercontent.com/u/12519008?v=4" alt="" />
       </div>
       <div class="overflow-hidden px-2 text-sm font-semibold text-foreground">
-        Luciano Oliveira
-        <p class="truncate text-ellipsis text-xs font-semibold text-muted-foreground">me&#64;lanno.dev</p>
+        Ric Man
+        <p class="truncate text-ellipsis text-xs font-semibold text-muted-foreground">mail is here</p>
       </div>
     </div>
 
     <div class="border-b border-dashed border-border"></div>
 
-    <ul class="my-2 mx-4 flex flex-col">
-      @for (item of profileMenu; track $index) {
+    <ul class="mx-4 my-2 flex flex-col">
       <li
-        routerLink="{{ item.link }}"
-        :key="$index"
+        [routerLink]="['/dashboard/profile/user']"
         class="inline-flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-xs font-semibold text-muted-foreground hover:bg-card hover:text-primary">
-        <svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5 text-muted-foreground/50'"> </svg-icon>
-        {{ item.title }}
+        <svg-icon
+          src="./assets/icons/heroicons/outline/user-circle.svg"
+          [svgClass]="'h-5 w-5 text-muted-foreground/50'">
+        </svg-icon>
+       Profile
       </li>
-      }
+      <li
+        [routerLink]="['/dashboard/profile/settings']"
+        class="inline-flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-xs font-semibold text-muted-foreground hover:bg-card hover:text-primary">
+        <svg-icon
+          src="./assets/icons/heroicons/outline/cog-6-tooth.svg"
+          [svgClass]="'h-5 w-5 text-muted-foreground/50'">
+        </svg-icon>
+        Paramètre
+      </li>
+      <li
+        class="inline-flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-xs font-semibold text-muted-foreground hover:bg-card hover:text-primary">
+        <svg-icon src="./assets/icons/heroicons/outline/logout.svg" [svgClass]="'h-5 w-5 text-muted-foreground/50'">
+        </svg-icon>
+        Déconnexion
+      </li>
     </ul>
     <hr class="border-dashed border-border" />
     <div class="mx-4 my-2">

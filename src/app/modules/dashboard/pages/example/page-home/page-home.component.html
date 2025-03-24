@@ -1,0 +1,53 @@
+<app-global-header [data]="dataInfo" [rightContent]="htmlRightElement"></app-global-header>
+<ng-template #htmlRightElement>
+  <button
+    class="flex-none rounded-md bg-muted px-4 py-2.5 text-xs font-semibold text-muted-foreground hover:text-foreground">
+    Manage Bids
+  </button>
+  <a
+    [routerLink]="['/dashboard/home-two']"
+    class="flex-none rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-white">
+    Home Two
+  </a>
+</ng-template>
+
+<div class="grid grid-cols-12 gap-2">
+  <div class="col-span-3 self-start rounded-lg bg-background p-4">
+    <app-bilan-text></app-bilan-text>
+  </div>
+  <div class="col-span-3 self-start rounded-lg bg-background p-4">
+    <app-bilan-text></app-bilan-text>
+  </div>
+  <div class="col-span-3 self-start rounded-lg bg-background p-4">
+    <app-bilan-text></app-bilan-text>
+  </div>
+  <div class="col-span-3 self-start rounded-lg bg-background p-4">
+    <app-bilan-text></app-bilan-text>
+  </div>
+</div>
+
+<div class="w-100 h-[50vh] flex items-center justify-center">
+  <div class="text-center text-white">
+    <h1 class="text-6xl font-bold uppercase">BCA</h1>
+    <small class="font-bold">Business Commerce Admin</small>
+  </div>
+</div>
+<!--
+<div class="col-span-8 flex-col rounded-lg bg-background px-8 py-8 sm:flex-row">
+    <div class="mb-4 flex items-center justify-between">
+      <div class="flex-col items-center">
+        <h3 class="text-md font-bold text-foreground">Active Auctions</h3>
+        <span class="text-xs text-muted-foreground">Updated 37 minutes ago</span>
+      </div>
+      <button
+        class="flex-none rounded-md bg-card px-4 py-2.5 text-xs font-semibold text-muted-foreground hover:bg-muted hover:text-foreground">
+        History
+      </button>
+    </div>
+
+    <div class="relative">
+      <app-table-content [headers]="tableHeaders" [data]="tableData"></app-table-content>
+    </div>
+  </div>
+
+-->

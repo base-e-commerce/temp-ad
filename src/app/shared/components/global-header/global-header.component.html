@@ -1,0 +1,14 @@
+<div class="mb-4 flex justify-between" *ngIf="data">
+  <div class="inline-block">
+    <h3 class="font-semibold text-foreground">{{ data.title }}</h3>
+    <div class="space-x-1 text-xs font-medium text-muted-foreground">
+      <!-- <a [routerLink]="['/']" class="hover:text-primary">Home</a> -->
+      <span>{{ data.subtitle }}</span>
+    </div>
+  </div>
+  <div class="inline-block space-x-4" *ngIf="rightContent">
+    <ng-container *ngIf="rightContent">
+      <ng-container *ngTemplateOutlet="rightContent"></ng-container>
+    </ng-container>
+  </div>
+</div>
