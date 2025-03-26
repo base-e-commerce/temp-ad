@@ -1,1 +1,178 @@
-<p>home works!</p>
+<app-global-header [data]="dataInfo" [rightContent]="htmlRightElement"></app-global-header>
+<ng-template #htmlRightElement> </ng-template>
+
+<div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+  <div class="self-start rounded-lg bg-background p-4 shadow">
+    <div class="flex items-center">
+      <div class="rounded-full bg-blue-500 p-3 text-white">
+        <svg-icon src="assets/icons/heroicons/custom-other/ic--sharp-shopify.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
+      </div>
+      <div class="ml-4">
+        <p class="text-lg text-foreground">Commandes</p>
+        <p class="text-xl font-semibold text-muted-foreground">{{ totalOrders }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="self-start rounded-lg bg-background p-4 shadow">
+    <div class="flex items-center">
+      <div class="rounded-full bg-green-500 p-3 text-white">
+        <svg-icon src="assets/icons/heroicons/custom-other/tdesign--money.svg" [svgClass]="'h-5 w-5 hidden'">
+        </svg-icon>
+      </div>
+      <div class="ml-4">
+        <p class="text-lg text-foreground">Revenus</p>
+        <p class="text-xl font-semibold text-muted-foreground">{{ revenue | currency : 'EUR' }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="self-start rounded-lg bg-background p-4 shadow">
+    <div class="flex items-center">
+      <div class="rounded-full bg-yellow-500 p-3 text-white">
+        <svg-icon src="assets/icons/heroicons/custom-other/user-group-outline.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
+      </div>
+      <div class="ml-4">
+        <p class="text-lg text-foreground">Utilisateurs</p>
+        <p class="text-xl font-semibold text-muted-foreground">{{ users }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="self-start rounded-lg bg-background p-4 shadow">
+    <div class="flex items-center">
+      <div class="rounded-full bg-red-500 p-3 text-white">
+        <svg-icon src="assets/icons/heroicons/custom-other/document-text.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
+      </div>
+      <div class="ml-4">
+        <p class="text-lg text-foreground">Produits</p>
+        <p class="text-xl font-semibold text-muted-foreground">{{ products }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-5 grid grid-cols-12 gap-4">
+  <div class="col-span-7 self-start">
+    <div class="relative mb-5 rounded-lg bg-background px-6 py-6 sm:flex-row">
+      <div class="mb-2 flex items-center justify-between">
+        <div class="flex-col items-center">
+          <h3 class="text-md font-bold text-foreground">Dernières commandes</h3>
+          <span class="text-xs text-muted-foreground">Il y a 15 minutes</span>
+        </div>
+        <button
+          class="flex-none rounded-md bg-card px-4 py-2.5 text-xs font-semibold text-muted-foreground hover:bg-muted hover:text-foreground">
+          Voir tout
+        </button>
+      </div>
+      <app-divide></app-divide>
+
+      <div class="relative grid grid-cols-1 gap-2">
+        <div class="relative">
+          <input
+            type="text"
+            class="w-full rounded-lg border-gray-300 pr-10 shadow-sm focus:border-primary focus:ring-primary"
+            placeholder="Recherche" />
+          <button class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-400 hover:text-gray-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="h-5 w-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <app-divide></app-divide>
+
+      <app-table-content [headers]="tableHeaders" [data]="tableData"></app-table-content>
+      <div class="mt-4 flex items-center justify-between text-xs">
+        <div class="flex items-center space-x-2">
+          <button class="flex items-center justify-center rounded bg-gray-300 p-1 text-xs font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button class="flex items-center justify-center rounded bg-gray-300 p-1 text-xs font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+        <span class="mx-2 text-xs text-foreground"> Page 1/1 </span>
+      </div>
+    </div>
+
+    <div class="relative rounded-lg bg-background px-6 py-6 sm:flex-row">
+      <div class="mb-2 flex items-center justify-between">
+        <div class="flex-col items-center">
+          <h3 class="text-md font-bold text-foreground">Dernières inscription clients</h3>
+          <span class="text-xs text-muted-foreground">Il y a 15 minutes</span>
+        </div>
+        <button
+          class="flex-none rounded-md bg-card px-4 py-2.5 text-xs font-semibold text-muted-foreground hover:bg-muted hover:text-foreground">
+          Voir tout
+        </button>
+      </div>
+      <app-divide></app-divide>
+
+      <app-table-content [headers]="tableHeadersClient" [data]="tableDataClient"></app-table-content>
+      <div class="mt-4 flex items-center justify-between text-xs">
+        <div class="flex items-center space-x-2">
+          <button class="flex items-center justify-center rounded bg-gray-300 p-1 text-xs font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button class="flex items-center justify-center rounded bg-gray-300 p-1 text-xs font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+        <span class="mx-2 text-xs text-foreground"> Page 1/1 </span>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-5 self-start rounded-lg bg-background px-6 py-6 sm:flex-row">
+    <div class="relative">
+      <div class="mb-2 flex items-center justify-between">
+        <div class="flex-col items-center">
+          <h3 class="text-md font-bold text-foreground">Ventes Mensuelles</h3>
+          <span class="text-xs text-muted-foreground">15 produits</span>
+        </div>
+        <button
+          class="flex-none rounded-md bg-card px-4 py-2.5 text-xs font-semibold text-muted-foreground hover:bg-muted hover:text-foreground">
+          Voir tout
+        </button>
+      </div>
+      <app-divide></app-divide>
+      <div class="w-100">
+        <app-map></app-map>
+      </div>
+    </div>
+  </div>
+</div>
