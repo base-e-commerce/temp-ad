@@ -1,1 +1,121 @@
-<p>client-list works!</p>
+<app-global-header [data]="dataInfo" [rightContent]="htmlRightElement"></app-global-header>
+<ng-template #htmlRightElement> </ng-template>
+
+<div class="mt-5 grid grid-cols-12 gap-4">
+  <div class="col-span-8 self-start">
+    <div class="relative mb-5 rounded-lg bg-background px-6 py-6 sm:flex-row">
+      <div class="mb-2 flex items-center justify-between">
+        <div class="flex-col items-center">
+          <h3 class="text-md font-bold text-foreground">Liste clients</h3>
+          <span class="text-xs text-muted-foreground">15 nouveau depuis les 24heures</span>
+        </div>
+        <button
+        (click)="openCreateClient()"
+          class="flex-none rounded-md bg-card px-4 py-2.5 text-xs font-semibold text-muted-foreground hover:bg-muted hover:text-foreground">
+          Nouveau
+        </button>
+      </div>
+      <app-divide></app-divide>
+
+      <div class="relative grid grid-cols-1 gap-2">
+        <div class="relative">
+          <input
+            type="text"
+            class="w-full rounded-lg border-gray-300 pr-10 shadow-sm focus:border-primary focus:ring-primary"
+            placeholder="Recherche" />
+          <button class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-400 hover:text-gray-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="h-5 w-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <app-divide></app-divide>
+
+      <app-table-content [headers]="tableHeaders" [data]="tableData"></app-table-content>
+      <div class="mt-4 flex items-center justify-between text-xs">
+        <div class="flex items-center space-x-2">
+          <button class="flex items-center justify-center rounded bg-gray-300 p-1 text-xs font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button class="flex items-center justify-center rounded bg-gray-300 p-1 text-xs font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+        <span class="mx-2 text-xs text-foreground"> Page 1/1 </span>
+      </div>
+    </div>
+
+    <div class="relative rounded-lg bg-background px-6 py-6 sm:flex-row">
+      <div class="mb-2 flex items-center justify-between">
+        <div class="flex-col items-center">
+          <h3 class="text-md font-bold text-foreground">Placement client</h3>
+          <span class="text-xs text-muted-foreground">1687 clients</span>
+        </div>
+      </div>
+      <app-divide></app-divide>
+      <div class="w-100">
+        <app-map></app-map>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-span-4 self-start">
+    <div class="mx-auto w-full max-w-md overflow-hidden rounded-lg bg-background shadow-lg">
+      <div class="flex flex-col items-center justify-center p-6">
+        <img
+          src="./assets/avatars/avt-01.jpg"
+          alt="Photo de Jean Dupont"
+          class="mb-4 rounded-full object-cover" />
+        <app-divide class="w-full"></app-divide>
+        <div class="mb-2 flex w-full justify-between">
+          <p class="text-sm font-semibold text-foreground">Nom</p>
+          <p class="text-sm text-foreground">Jean Dupont</p>
+        </div>
+        <div class="mb-2 flex w-full justify-between">
+          <p class="text-sm font-semibold text-foreground">Email</p>
+          <p class="text-sm text-foreground">{{ 'jean.dupont@example.com' }}</p>
+        </div>
+        <div class="mb-2 flex w-full justify-between">
+          <p class="text-sm font-semibold text-foreground">Téléphone</p>
+          <p class="text-sm text-foreground">+33 1 23 45 67 89</p>
+        </div>
+        <div class="mb-2 flex w-full justify-between">
+          <p class="text-sm font-semibold text-foreground">Adresse</p>
+          <p class="text-sm text-foreground">123 Rue de la Paix, 75000 Paris</p>
+        </div>
+        <div class="mb-2 flex w-full justify-between">
+          <p class="text-sm font-semibold text-foreground">Date de naissance</p>
+          <p class="text-sm text-foreground">01/01/1980</p>
+        </div>
+        <app-divide class="w-full"></app-divide>
+        <div class="flex w-full justify-between">
+          <button class="hover:bg-primary-dark rounded bg-primary p-3 text-xs text-foreground">Modifier</button>
+          <button class="hover:bg-primary-dark rounded bg-primary p-3 text-xs text-foreground">Contacter</button>
+          <button class="hover:bg-primary-dark rounded bg-primary p-3 text-xs text-foreground">Envoyer un email</button>
+          <button class="hover:bg-primary-dark rounded bg-primary p-3 text-xs text-foreground">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

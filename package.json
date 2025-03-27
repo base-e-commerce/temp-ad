@@ -1,6 +1,6 @@
 {
   "name": "angular-tailwind",
-  "displayName": "BCA - Web",
+  "displayName": "BCA",
   "version": "1.0.0",
   "description": "Business Commerce Administration",
   "author": "",
@@ -19,10 +19,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.1.0",
+    "@angular/cdk": "^19.2.7",
     "@angular/common": "^18.1.0",
     "@angular/compiler": "^18.1.0",
     "@angular/core": "^18.1.0",
     "@angular/forms": "^18.1.0",
+    "@angular/material": "^19.2.7",
     "@angular/platform-browser": "^18.1.0",
     "@angular/platform-browser-dynamic": "^18.1.0",
     "@angular/router": "^18.1.0",
