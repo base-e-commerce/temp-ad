@@ -1,1 +1,101 @@
-<p>products works!</p>
+<app-global-header [data]="dataInfo" [rightContent]="htmlRightElement"></app-global-header>
+<ng-template #htmlRightElement> </ng-template>
+
+<div class="mt-5 grid grid-cols-12 gap-4">
+  <div class="col-span-8 self-start">
+    <div class="relative mb-5 rounded-lg bg-background px-6 py-6 sm:flex-row">
+      <div class="mb-2 flex items-center justify-between">
+        <div class="flex-col items-center">
+          <h3 class="text-md font-bold text-foreground">Liste produits</h3>
+          <span class="text-xs text-muted-foreground">Total 1678</span>
+        </div>
+      </div>
+      <app-divide></app-divide>
+
+      <div class="relative grid grid-cols-1 gap-2">
+        <div class="relative">
+          <input
+            type="text"
+            class="w-full rounded-lg border-gray-300 pr-10 shadow-sm focus:border-primary focus:ring-primary"
+            placeholder="Recherche" />
+          <button class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-400 hover:text-gray-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="h-5 w-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <app-divide></app-divide>
+
+      <app-table-content [headers]="tableHeaders" [data]="tableData"></app-table-content>
+      <div class="mt-4 flex items-center justify-between text-xs">
+        <div class="flex items-center space-x-2">
+          <button class="flex items-center justify-center rounded bg-gray-300 p-1 text-xs font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button class="flex items-center justify-center rounded bg-gray-300 p-1 text-xs font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+        <span class="mx-2 text-xs text-foreground"> Page 1/1 </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-span-4 self-start">
+    <div class="mx-auto w-full max-w-md overflow-hidden rounded-lg bg-background shadow-lg">
+      <div class="flex flex-col items-center justify-center p-6">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdyvK9iusXBcBe9fx7rVS3joloIgyf4jDsH7fkjZZ7MvBdIr-lJpaaYbiF-KjvWS3VNcY&usqp=CAU"
+          alt="Photo du produit"
+          class="mb-4 object-cover" />
+        <app-divide class="w-full"></app-divide>
+        <div class="mb-2 flex w-full justify-between">
+          <p class="text-sm font-semibold text-foreground">Nom du produit</p>
+          <p class="text-sm text-foreground">Produit XYZ</p>
+        </div>
+        <div class="mb-2 flex w-full justify-between">
+          <p class="text-sm font-semibold text-foreground">Prix</p>
+          <p class="text-sm text-foreground">€99.99</p>
+        </div>
+        <div class="mb-2 flex w-full justify-between">
+          <p class="text-sm font-semibold text-foreground">Catégorie</p>
+          <p class="text-sm text-foreground">Électronique</p>
+        </div>
+        <div class="mb-2 flex w-full justify-between">
+          <p class="text-sm font-semibold text-foreground">Disponibilité</p>
+          <p class="text-sm text-foreground">En stock</p>
+        </div>
+        <div class="mb-2 flex w-full justify-between">
+          <p class="text-sm font-semibold text-foreground">Date de sortie</p>
+          <p class="text-sm text-foreground">01/01/2023</p>
+        </div>
+        <app-divide class="w-full"></app-divide>
+        <div class="flex w-full justify-between">
+          <button class="hover:bg-primary-dark rounded bg-primary p-3 text-xs text-foreground">Modifier</button>
+          <button class="hover:bg-primary-dark rounded bg-primary p-3 text-xs text-foreground">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
