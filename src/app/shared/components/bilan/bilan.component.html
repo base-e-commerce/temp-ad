@@ -1,0 +1,45 @@
+@if(url){
+<a [routerLink]="[url]">
+  <div class="mb-4 flex items-center justify-between rounded-lg bg-background p-4 shadow-lg">
+    <div class="flex items-center">
+      <svg-icon src="{{ icon }}" [svgClass]="'mr-4 h-10 w-10 ' + color"> </svg-icon>
+    </div>
+
+    <div class="flex-1">
+      <h3 class="text-md font-bold text-foreground">
+        {{ title }}
+      </h3>
+      <span class="text-xs text-muted-foreground">
+        {{ subtitle }}
+      </span>
+    </div>
+
+    <div class="flex items-center justify-center">
+      <span class="text-4xl font-semibold {{ color }}">
+        {{ value }}
+      </span>
+    </div>
+  </div>
+</a>
+}@else{
+<div class="mb-4 flex items-center justify-between rounded-lg bg-background p-4 shadow-lg">
+  <div class="flex items-center">
+    <svg-icon src="{{ icon }}" [svgClass]="'mr-4 h-10 w-10 ' + color"> </svg-icon>
+  </div>
+
+  <div class="flex-1">
+    <h3 class="text-md font-bold text-foreground">
+      {{ title }}
+    </h3>
+    <span class="text-xs text-muted-foreground">
+      {{ subtitle }}
+    </span>
+  </div>
+
+  <div class="flex items-center justify-center">
+    <span class="text-4xl font-semibold {{ color }}">
+      {{ value }}
+    </span>
+  </div>
+</div>
+}

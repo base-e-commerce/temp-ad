@@ -1,1 +1,243 @@
-<p>service-gestion works!</p>
+<app-global-header [data]="dataInfo" [rightContent]="htmlRightElement"></app-global-header>
+<ng-template #htmlRightElement> </ng-template>
+<div class="mt-5 grid grid-cols-12 gap-4">
+  <div class="col-span-9 self-start">
+    <div class="grid grid-cols-12 gap-4">
+      <div class="col-span-6 self-start">
+        <div class="relative rounded-lg bg-background px-6 py-6 sm:flex-row">
+          <div class="flex items-center justify-between">
+            <div class="flex-col items-center">
+              <h3 class="text-md font-bold text-foreground">Création service</h3>
+              <span class="text-xs text-muted-foreground">Remplir le formulaire</span>
+            </div>
+          </div>
+          <app-divide></app-divide>
+          <form>
+            <div class="grid grid-cols-1 gap-4 space-y-2">
+              <div>
+                <label for="productName" class="mb-2 block text-sm font-medium text-foreground">Nom du service</label>
+                <input
+                  id="productName"
+                  formControlName="productName"
+                  type="text"
+                  class="w-full rounded-lg border-gray-300 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Entrer le nom du service" />
+              </div>
+              <div>
+                <label for="productDescription" class="mb-2 block text-sm font-medium text-foreground"
+                  >Description</label
+                >
+                <textarea
+                  id="productDescription"
+                  formControlName="productDescription"
+                  class="w-full rounded-lg border-gray-300 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Entrer la description du service"></textarea>
+              </div>
+            </div>
+            <app-divide></app-divide>
+            <div class="flex items-center">
+              <button type="submit" class="w-full rounded-md bg-primary px-4 py-2 text-sm font-medium text-white">
+                Créer
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-span-6 self-start">
+        <div class="relative rounded-lg bg-background px-6 py-6 sm:flex-row">
+          <div class="mb-2 flex items-center justify-between">
+            <div class="flex-col items-center">
+              <h3 class="text-md font-bold text-foreground">Liste services</h3>
+              <span class="text-xs text-muted-foreground">Total 25</span>
+            </div>
+          </div>
+          <app-divide></app-divide>
+
+
+          <table class="w-full table-auto border-collapse">
+            <thead class="text-xs uppercase text-foreground">
+              <tr>
+                <th class="px-4 py-3 text-left font-semibold">Numéro</th>
+                <th class="px-4 py-3 text-left font-semibold">Nom</th>
+                <th class="px-4 py-3 text-left font-semibold">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-border hover:bg-card">
+                <td class="px-4 py-3 text-left">
+                  <span class="text-sm font-medium text-foreground">Number</span>
+                </td>
+                <td class="px-4 py-3 text-left">
+                  <span class="text-sm font-medium text-foreground">Nom</span>
+                </td>
+                <td class="px-4 py-3 text-left">
+                  <a class="cursor-pointer text-sm font-medium text-foreground hover:underline">Détail</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="mt-4 flex items-center justify-between text-xs">
+            <div class="flex items-center space-x-2">
+              <button class="flex items-center justify-center rounded bg-gray-300 p-1 text-xs font-medium">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button class="flex items-center justify-center rounded bg-gray-300 p-1 text-xs font-medium">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+            <span class="mx-2 text-xs text-foreground"> Page 1/1 </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-6 self-start">
+        <div class="relative rounded-lg bg-background px-6 py-6 sm:flex-row">
+          <div class="flex items-center justify-between">
+            <div class="flex-col items-center">
+              <h3 class="text-md font-bold text-foreground">Création catégorie</h3>
+              <span class="text-xs text-muted-foreground">Remplir le formulaire</span>
+            </div>
+          </div>
+          <app-divide></app-divide>
+          <form>
+            <div class="grid grid-cols-1 gap-4 space-y-2">
+              <div>
+                <label for="productName" class="mb-2 block text-sm font-medium text-foreground">Nom du catégorie</label>
+                <input
+                  id="productName"
+                  formControlName="productName"
+                  type="text"
+                  class="w-full rounded-lg border-gray-300 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Entrer le nom du catégorie" />
+              </div>
+              <div>
+                <label for="productDescription" class="mb-2 block text-sm font-medium text-foreground"
+                  >Description</label
+                >
+                <textarea
+                  id="productDescription"
+                  formControlName="productDescription"
+                  class="w-full rounded-lg border-gray-300 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Entrer la description du catégorie"></textarea>
+              </div>
+              <div>
+                <label for="service" class="mb-2 block text-sm font-medium text-foreground">Service</label>
+                <select
+                  id="service"
+                  formControlName="service"
+                  class="w-full rounded-lg border-gray-300 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                  <option value="">Sélectionner le service</option>
+                  <option value="service1">Service 1</option>
+                  <option value="service2">Service 2</option>
+                  <option value="service3">Service 3</option>
+                </select>
+              </div>
+            </div>
+            <app-divide></app-divide>
+            <div class="flex items-center">
+              <button type="submit" class="w-full rounded-md bg-primary px-4 py-2 text-sm font-medium text-white">
+                Créer
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-span-6 self-start">
+        <div class="relative rounded-lg bg-background px-6 py-6 sm:flex-row">
+          <div class="mb-2 flex items-center justify-between">
+            <div class="flex-col items-center">
+              <h3 class="text-md font-bold text-foreground">Liste catégorie</h3>
+              <span class="text-xs text-muted-foreground">Total 25</span>
+            </div>
+          </div>
+          <app-divide></app-divide>
+
+
+          <table class="w-full table-auto border-collapse">
+            <thead class="text-xs uppercase text-foreground">
+              <tr>
+                <th class="px-4 py-3 text-left font-semibold">Numéro</th>
+                <th class="px-4 py-3 text-left font-semibold">Nom</th>
+                <th class="px-4 py-3 text-left font-semibold">Service</th>
+                <th class="px-4 py-3 text-left font-semibold">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-border hover:bg-card">
+                <td class="px-4 py-3 text-left">
+                  <span class="text-sm font-medium text-foreground">Number</span>
+                </td>
+                <td class="px-4 py-3 text-left">
+                  <span class="text-sm font-medium text-foreground">Nom</span>
+                </td>
+                <td class="px-4 py-3 text-left">
+                  <span class="text-sm font-medium text-foreground">Service</span>
+                </td>
+                <td class="px-4 py-3 text-left">
+                  <a class="cursor-pointer text-sm font-medium text-foreground hover:underline">Détail</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="mt-4 flex items-center justify-between text-xs">
+            <div class="flex items-center space-x-2">
+              <button class="flex items-center justify-center rounded bg-gray-300 p-1 text-xs font-medium">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button class="flex items-center justify-center rounded bg-gray-300 p-1 text-xs font-medium">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+            <span class="mx-2 text-xs text-foreground"> Page 1/1 </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-span-3 self-start">
+    <ng-container *ngIf="false">
+      <div class="col-span-12" *ngFor="let _ of [].constructor(6)">
+        <app-bilan-loading></app-bilan-loading>
+      </div>
+    </ng-container>
+    <div class="col-span-12" *ngIf="!false">
+      <app-bilan
+        *ngFor="let stat of resStat"
+        [title]="stat.title"
+        [url]="stat.url"
+        [subtitle]="stat.subtitle"
+        [value]="stat.value"
+        [icon]="stat.icon"
+        [color]="stat.color">
+      </app-bilan>
+    </div>
+  </div>
+</div>
