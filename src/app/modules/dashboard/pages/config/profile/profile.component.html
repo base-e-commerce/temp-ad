@@ -1,1 +1,134 @@
-<p>profile works!</p>
+<app-global-header [data]="dataInfo" [rightContent]="htmlRightElement"></app-global-header>
+<ng-template #htmlRightElement> </ng-template>
+
+<div class="mt-5 grid grid-cols-12 gap-4">
+  <div class="col-span-3 self-start rounded-lg bg-background p-4 shadow-md">
+    <div *ngIf="false; else userContent" class="animate-pulse">
+      <app-profile-content-loading></app-profile-content-loading>
+    </div>
+
+    <ng-template #userContent>
+      <div class="flex flex-col items-center">
+        <img
+          [src]="'assets/avatars/avt-01.jpg'"
+          alt="User Avatar"
+          class="h-24 w-24 rounded-full border-2 border-gray-300 object-cover" />
+        <h2 class="mt-4 text-lg font-semibold text-foreground">UserName</h2>
+        <p class="text-sm text-foreground">Email</p>
+      </div>
+      <app-divide></app-divide>
+      <ul class="mt-2 space-y-2 text-sm text-foreground">
+        <li class="flex justify-between"><strong>DESC:</strong> VALUE</li>
+        <li class="flex justify-between"><strong>DESC:</strong> VALUE</li>
+        <li class="flex justify-between"><strong>DESC:</strong> VALUE</li>
+        <li class="flex justify-between"><strong>DESC:</strong> VALUE</li>
+        <li class="flex justify-between"><strong>DESC:</strong> VALUE</li>
+      </ul>
+      <app-divide></app-divide>
+      <div class="flex w-full justify-between">
+        <button class="hover:bg-primary-dark rounded bg-primary p-3 text-xs text-foreground">Paramètre</button>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="col-span-9 self-start rounded-lg bg-background p-4 shadow-md">
+    <div class="flex items-center justify-between">
+      <div class="flex-col items-center">
+        <h3 class="text-md font-bold text-foreground">Activité</h3>
+        <span class="text-xs text-muted-foreground">Historique</span>
+      </div>
+    </div>
+    <app-divide></app-divide>
+    <div class="relative overflow-x-auto">
+      <table class="w-full table-auto">
+        <thead class="text-xs uppercase text-muted-foreground">
+          <tr>
+            <th class="py-3 text-left">{{ 'DESCRIPTION' }}</th>
+            <th class="py-3 text-left">{{ 'COMMANDE' }}</th>
+            <th class="py-3 text-left">{{ 'REPSONSIBLE' }}</th>
+            <th class="py-3 text-left">{{ 'WATCH' }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cursor-pointer border-dashed border-border hover:bg-card">
+            <td class="py-2 pr-2 text-left">
+              <div class="flex items-center">
+                <div class="flex flex-col justify-items-start">
+                  <a class="text-capitalize mb-1 text-sm font-semibold text-foreground">{{ ' history.description' }}</a>
+                  <span class="text-xs font-semibold text-muted-foreground/50">{{ 'history.createdAt' }}</span>
+                </div>
+              </div>
+            </td>
+            <td class="py-2 pr-2">
+              <button class="flex items-center">
+                <app-avatar-text
+                  [text]="'history.idCommandeRoom.idRoom.title'"
+                  class="mr-2 h-10 w-10 flex-none rounded-sm"></app-avatar-text>
+                <div class="flex flex-col justify-items-start">
+                  <a class="text-capitalize mb-1 text-left text-sm font-semibold text-foreground">{{
+                    ' history.idCommandeRoom.idRoom.title'
+                  }}</a>
+                  <span class="text-left text-xs font-semibold text-muted-foreground/50">{{
+                    'history.idCommandeRoom.idRoom.subTitle'
+                  }}</span>
+                </div>
+              </button>
+            </td>
+            <td class="py-2 pr-2">
+              <div class="flex items-center">
+                <img
+                  [src]="'assets/avatars/user.png'"
+                  class="mr-2 h-10 w-10 flex-none rounded-sm object-contain"
+                  alt="" />
+                <div class="flex flex-col justify-items-start">
+                  <a class="text-capitalize mb-1 text-sm font-semibold text-foreground">{{
+                    'history.idAdmin.name '
+                  }}</a>
+                  <span class="text-xs font-semibold text-muted-foreground/50">{{
+                    'history.idAdmin.idRole.poste'
+                  }}</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="cursor-pointer border-dashed border-border hover:bg-card">
+            <td class="py-2 pr-2">
+              <div class="flex items-center">
+                <div class="flex flex-col justify-items-start">
+                  <a class="text-capitalize mb-1 text-sm font-semibold text-foreground">{{ 'EMPTY_DATA_HISTORY' }}</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="mt-4 flex items-center justify-between text-xs">
+        <div class="flex items-center space-x-2">
+          <button class="flex items-center justify-center rounded bg-gray-300 p-1 text-xs font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button class="flex items-center justify-center rounded bg-gray-300 p-1 text-xs font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+        <span class="mx-2 text-xs text-foreground"> Page 1/1 </span>
+      </div>
+    </div>
+  </div>
+</div>
