@@ -2,7 +2,114 @@
 <ng-template #htmlRightElement> </ng-template>
 
 <div class="mt-5 grid grid-cols-12 gap-4">
-  <div class="col-span-8 self-start">
+  <div class="col-span-6 self-start">
+    <div class="relative rounded-lg bg-background px-6 py-6 sm:flex-row">
+      <div class="flex items-center justify-between">
+        <div class="flex-col items-center">
+          <h3 class="text-md font-bold text-foreground">Création nouveau produit</h3>
+          <span class="text-xs text-muted-foreground">Remplir le formulaire</span>
+        </div>
+      </div>
+      <app-divide></app-divide>
+      <form>
+        <div class="grid grid-cols-2 gap-4 space-y-2">
+          <div class="col-span-2">
+            <label for="productName" class="mb-2 block text-sm font-medium text-foreground">Nom du produit</label>
+            <input
+              id="productName"
+              formControlName="productName"
+              type="text"
+              class="w-full rounded-lg border-gray-300 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              placeholder="Entrer le nom du produit" />
+          </div>
+          <div>
+            <label for="productPrice" class="mb-2 block text-sm font-medium text-foreground">Prix</label>
+            <input
+              id="productPrice"
+              formControlName="productPrice"
+              type="number"
+              class="w-full rounded-lg border-gray-300 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              placeholder="Entrer le prix" />
+          </div>
+          <div>
+            <label for="productStock" class="mb-2 block text-sm font-medium text-foreground">Stock</label>
+            <input
+              id="productStock"
+              formControlName="productStock"
+              type="number"
+              class="w-full rounded-lg border-gray-300 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              placeholder="Entrer le stock" />
+          </div>
+          <div class="col-span-2">
+            <label for="productImage" class="mb-2 block text-sm font-medium text-foreground">Image du produit</label>
+            <div class="relative rounded-lg border-2 border-dashed border-gray-300 p-4">
+              <input
+                id="productImage"
+                formControlName="productImage"
+                type="file"
+                class="absolute inset-0 cursor-pointer opacity-0" />
+              <div class="text-center">
+                <svg
+                  class="mx-auto h-12 w-12 text-gray-400"
+                  stroke="currentColor"
+                  fill="none"
+                  viewBox="0 0 48 48"
+                  aria-hidden="true">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 14v20c0 2.21 3.582 4 8 4h16c4.418 0 8-1.79 8-4V14c0-2.21-3.582-4-8-4H16C12.418 10 8 11.79 8 14zM24 24v-8M24 24h8M24 24h-8M24 32v8M24 32h8M24 32h-8M24 16v-8"></path>
+                </svg>
+                <p class="mt-2 text-sm text-gray-600">Glisser-déposer une image ou cliquer pour télécharger</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2">
+            <label for="productDescription" class="mb-2 block text-sm font-medium text-foreground">Description</label>
+            <textarea
+              id="productDescription"
+              formControlName="productDescription"
+              class="w-full rounded-lg border-gray-300 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              placeholder="Entrer la description du produit"></textarea>
+          </div>
+          <div class="col-span-2">
+            <label for="service" class="mb-2 block text-sm font-medium text-foreground">Service</label>
+            <select
+              id="service"
+              formControlName="service"
+              class="w-full rounded-lg border-gray-300 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+              <option value="">Sélectionner un service</option>
+              <option value="service1">Service 1</option>
+              <option value="service2">Service 2</option>
+              <option value="service3">Service 3</option>
+            </select>
+          </div>
+          <div class="col-span-2">
+            <label for="category" class="mb-2 block text-sm font-medium text-foreground">Catégorie</label>
+            <select
+              id="category"
+              formControlName="category"
+              class="w-full rounded-lg border-gray-300 p-2 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+              <option value="">Sélectionner une catégorie</option>
+              <option value="category1">Catégorie 1</option>
+              <option value="category2">Catégorie 2</option>
+              <option value="category3">Catégorie 3</option>
+            </select>
+          </div>
+        </div>
+
+        <app-divide></app-divide>
+        <div class="flex items-center">
+          <button type="submit" class="w-full rounded-md bg-primary px-4 py-2 text-sm font-medium text-white">
+            Créer
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-span-6 self-start">
     <div class="relative mb-5 rounded-lg bg-background px-6 py-6 sm:flex-row">
       <div class="mb-2 flex items-center justify-between">
         <div class="flex-col items-center">
@@ -62,7 +169,7 @@
     </div>
   </div>
 
-  <div class="col-span-4 self-start">
+  <!-- <div class="col-span-4 self-start">
     <div class="mx-auto w-full max-w-md overflow-hidden rounded-lg bg-background shadow-lg">
       <div class="flex flex-col items-center justify-center p-6">
         <img
@@ -97,5 +204,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>

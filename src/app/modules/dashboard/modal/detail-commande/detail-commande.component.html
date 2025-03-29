@@ -1,0 +1,124 @@
+<div class="fixed inset-0 z-50 flex w-full items-center justify-center bg-gray-600 bg-opacity-50">
+  <div class="w-[75%] rounded-lg bg-background p-6 shadow-lg">
+    <div class="flex items-center justify-between">
+      <div>
+        <h3 class="text-md font-bold text-foreground">Commande title</h3>
+        <span class="text-xs text-muted-foreground">ID COMMANDE</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <button
+          (click)="cancel()"
+          class="rounded-md bg-gray-500 p-2 text-xs font-semibold text-white hover:bg-gray-400">
+          Fermer
+        </button>
+      </div>
+    </div>
+    <app-divide></app-divide>
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-6 self-start">
+        <div class="flex flex-col space-y-2">
+          <table class="w-full table-auto">
+            <thead class="text-xs uppercase text-muted-foreground">
+              <tr>
+                <th class="py-3 text-left">Client Name</th>
+                <th class="py-3 text-left">Contact</th>
+                <th class="py-3 text-left">Adresse</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="cursor-pointer border-dashed border-border hover:bg-card">
+                <td class="py-2 pr-2">
+                  <button class="flex items-center">
+                    <app-avatar-text-client
+                      [text]="'clientData.name'"
+                      class="mr-2 h-10 w-10 flex-none rounded-sm"></app-avatar-text-client>
+                    <div class="flex flex-col justify-items-start">
+                      <a class="text-capitalize mb-1 text-sm font-semibold text-foreground">{{ 'clientData.name' }}</a>
+                      <span class="text-left text-xs font-semibold text-muted-foreground/50">email</span>
+                    </div>
+                  </button>
+                </td>
+                <td class="py-2 pr-2">
+                  <div class="flex items-center">
+                    <div class="flex flex-col justify-items-start">
+                      <a class="text-capitalize mb-1 text-sm font-semibold text-foreground">Phone</a>
+                      <span class="text-xs font-semibold text-muted-foreground/50">Email</span>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-2 pr-2">
+                  <div class="flex items-center">
+                    <div class="flex flex-col justify-items-start">
+                      <a class="text-capitalize mb-1 text-sm font-semibold text-foreground">Adresse</a>
+                      <span class="text-xs font-semibold text-muted-foreground/50">Adresse</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <app-divide></app-divide>
+        </div>
+      </div>
+      <div class="col-span-6 self-start">
+        <div class="flex flex-col">
+          <table class="w-full table-auto">
+            <thead class="text-xs uppercase text-muted-foreground">
+              <tr>
+                <th class="py-3 text-left">COMMANDE</th>
+                <th class="py-3 text-left">PODUIT</th>
+                <th class="py-3 text-left">QT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="cursor-pointer border-dashed border-border">
+                <td class="py-2 pr-2">
+                  <div class="flex items-center">
+                    <app-avatar-text [text]="'Ttile'" class="mr-2 h-10 w-10 flex-none rounded-sm"></app-avatar-text>
+                    <div class="flex flex-col justify-items-start">
+                      <a class="text-capitalize mb-1 text-sm font-semibold text-foreground">{{ 'title' }}</a>
+                      <span class="text-xs font-semibold text-muted-foreground/50">DATE</span>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-2 pr-2">
+                  <div class="flex items-center">
+                    <img
+                      [src]="'assets/avatars/user.png'"
+                      class="mr-2 h-10 w-10 flex-none rounded-sm object-contain"
+                      alt="" />
+                    <div class="flex flex-col justify-items-start">
+                      <a class="text-capitalize mb-1 text-sm font-semibold text-foreground">ADMIN</a>
+                      <span class="text-xs font-semibold text-muted-foreground/50">ADMIN</span>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-2 pr-2 text-left">
+                  <div class="flex items-center">
+                    <div class="flex flex-col justify-items-start">
+                      <a class="text-capitalize mb-1 text-sm font-semibold text-foreground">PRIX</a>
+                      <span class="text-xs font-semibold text-muted-foreground/50">DEVISE</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <app-divide></app-divide>
+        </div>
+      </div>
+      <div class="col-span-12 self-start">
+        <div class="flex items-center justify-between space-x-4">
+          <div class="flex-col items-center text-left">
+            <h3 class="text- text-xl font-bold text-green-400">Confirmed</h3>
+            <span class="text-sm text-muted-foreground"> Date </span>
+          </div>
+          <div class="flex-col items-center text-left">
+            <h3 class="text- text-xl font-bold text-green-400">Confirmed</h3>
+            <span class="text-sm text-muted-foreground"> Date </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
